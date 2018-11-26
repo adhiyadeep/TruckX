@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Truck X
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="login.email" type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input [(ngModel)]="login.password" type="password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+  <button ion-button full (click)="signin()">Login</button>
+
+
+</ion-content>

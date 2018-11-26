@@ -1,0 +1,124 @@
+<!--
+  Generated template for the DriversPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{email}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-label>Total Numbers of Registered Drivers : {{length}}</ion-label>
+
+
+  <ion-list>
+    <ion-card>
+
+    <ion-item *ngFor="let driver of driversData; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <h3>
+        Name : {{driver.fname}}
+        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      </h3>
+      <div *ngIf="isGroupShown(i)">
+
+        <ion-row class="odd">
+          <ion-col col-5>
+            Last Name
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5 >
+            {{driver.lname}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="odd">
+          <ion-col col-5>
+            DOB
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5>
+            {{driver.dob | date}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="even">
+          <ion-col col-5>
+            Lisence No
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5>
+            {{driver.lno}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="even">
+          <ion-col col-5>
+            Email
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5>
+            {{driver.email}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="even">
+          <ion-col col-5>
+            Phone
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5>
+            {{driver.phone}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="odd">
+          <ion-col col-5>
+            Lisence Exp date
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-5>
+            {{driver.expdate |date}}
+          </ion-col>
+        </ion-row>
+
+        <button ion-button (click)="edit(driver.id,driver.fname,driver.lname,driver.dob,driver.email,driver.phone,driver.expdate,driver.lno)">Edit Driver</button>
+      </div>
+    
+    </ion-item>
+  </ion-card>
+  </ion-list>
+
+  <div *ngIf="noData">
+
+   <ion-label style="text-align: center"> {{message}} </ion-label> 
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <button ion-button full (click)="addDriver()">Add Drivers</button>
+
+</ion-footer>
