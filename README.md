@@ -1,3 +1,12 @@
 # TruckX
 
 Practical 
+CRUD OPERATION IN IONIC 3, BACKEND PHP PDO 
+STORAGE USED
+
+FUNCTIONALITY
+Login
+Add Driver
+View Driver
+Edit Driver
+
